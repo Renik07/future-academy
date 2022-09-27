@@ -1,5 +1,7 @@
 .button {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	border-radius: 10px;
 	padding: 12px 45px;
 	border: 1px solid transparent;
@@ -21,6 +23,13 @@
 	border: 1px solid var(--primary);
 }
 
+.primary svg {
+	stroke: var(--white);
+}
+.primary:hover svg {
+	stroke: var(--primary);
+}
+
 .ghost {
 	border: 1px solid var(--primary);
 	background-color: none;
@@ -29,6 +38,13 @@
 .ghost:hover {
 	color: var(--white);
 	background-color: var(--primary);
+}
+
+.ghost svg {
+	stroke: var(--primary);
+}
+.ghost:hover svg {
+	stroke: var(--white);
 }
 
 .form {
@@ -40,4 +56,14 @@
 	background-color: var(--white);
 	border: 1px solid var(--orange);
 	color: var(--primary);
+}
+
+.arrow {
+	display: flex;
+	margin-left: 10px;
+}
+
+.down {
+	transform: rotate(90deg);
+	transition: all 0.3s;
 }
