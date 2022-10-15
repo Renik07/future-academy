@@ -1,0 +1,136 @@
+.footer {
+	padding: 70px 0px;
+	background: var(--primary);
+	color: var(--white);
+	display: grid;
+	grid-template-columns: auto repeat(5, minmax(115px, 265px)) auto;
+	grid-template-rows: auto;
+	grid-template-areas: ". column1 column2 column3 column4 column5 .";
+	gap: 35px 70px;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.column1 {
+	padding-top: 50px;
+	grid-area: column1;
+}
+
+.column2 {
+	grid-area: column2;
+}
+
+.column3 {
+	grid-area: column3;
+}
+
+.column4 {
+	grid-area: column4;
+}
+
+.column5 {
+	grid-area: column5;
+}
+
+.title {
+	margin: 0;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 20px;
+}
+
+.link {
+	display: block;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+
+.logo {
+	display: block;
+	margin-bottom: 55px;
+}
+
+.tel {
+	display: block;
+	margin-bottom: 12px;
+
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.address {
+	margin-bottom: 12px;
+
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.email {
+	display: block;
+	margin-bottom: 35px;
+
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.icons {
+	max-width: 180px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-bottom: 30px;
+}
+
+.copyright {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	color: var(--grey);
+}
+
+@media (max-width: 1015px) {
+	.footer {
+		grid-template-areas: 
+			". column1 column2 column3 ."
+			". column4 column5 column5 ."
+		;
+		grid-template-columns: auto repeat(3, minmax(115px, 265px)) auto;
+	}
+}
+
+@media (max-width: 650px) {
+	.footer {
+		padding: 20px;
+		grid-template-areas: 
+			"column1 column2"
+			"column3 column4"
+			"column5 ."
+		;
+		gap: 30px;
+		grid-template-columns: repeat(2, minmax(115px, 280px));
+	}
+	.column1 {
+		padding-top: 0px;
+	}
+}
+@media (max-width: 400px) {
+	.footer {
+		grid-template-areas: 
+			"column1"
+			"column2"
+			"column3"
+			"column4"
+			"column5"
+		;
+		grid-template-columns: minmax(280px, 1fr);
+	}
+}
