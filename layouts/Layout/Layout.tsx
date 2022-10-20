@@ -5,6 +5,7 @@ import { Header } from "../Header/Header";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { Footer } from "../Footer/Footer";
 import { FC } from "react";
+import { IPageContext, PageContextProvider } from "../../context/page.context";
 
 const Layout = ({ children }: LayoutProps):JSX.Element => {
 	return (
@@ -19,12 +20,14 @@ const Layout = ({ children }: LayoutProps):JSX.Element => {
 	);
 };
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FC<T>) => {
+export const withLayout = <T extends Record<string, unknown> & IPageContext>(Component: FC<T>) => {
 	return function withLayoutComponent(props: T):JSX.Element {
 		return (
-			<Layout>
-				<Component {...props} />
-			</Layout>
+			<PageContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+				<Layout>
+					<Component {...props} />
+				</Layout>
+			</PageContextProvider>
 		);
 	};
 };
