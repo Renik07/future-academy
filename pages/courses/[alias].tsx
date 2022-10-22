@@ -9,9 +9,6 @@ import { withLayout } from "../../layouts/Layout/Layout";
 const firstCategory = 0;
 
 export const Course = ({ menu, page, products, firstCategory }:CourseProps ): JSX.Element => {
-	console.log(menu);
-	console.log(products);
-	console.log(page);
 	
 	return(
 		<>
