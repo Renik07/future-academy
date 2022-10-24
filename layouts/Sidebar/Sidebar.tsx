@@ -6,6 +6,7 @@ import cn from 'classnames'; */
 export const Sidebar = ({ ...props }: SidebarProps):JSX.Element => {
 	return (
 		<div {...props}>
+			<div>search</div>
 			<Menu />
 		</div>
 	)

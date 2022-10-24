@@ -22,10 +22,7 @@ function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 			<Tag size="m" color="ghost" href="https://google.com">dasdasdadasd</Tag>
 			<Tag color="green">dasdasdadasd</Tag>
 			<Tag>dasdasdadasd</Tag>
-			<Rating rating={rating} isEditable setRating={setRating} />
-
-			{/* { menu.map(item => <div key={item._id.secondCategory}>{item._id.secondCategory}</div>) } */}
-			
+			<Rating rating={rating} isEditable setRating={setRating} />		
 		</>
   );
 }
