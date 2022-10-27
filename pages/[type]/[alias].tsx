@@ -6,12 +6,13 @@ import { MenuItem } from "../../intefaces/menu.interface";
 import { TopLevelCategory, TopPageModel } from "../../intefaces/page.interface";
 import { ProductModel } from "../../intefaces/product.interface";
 import { withLayout } from "../../layouts/Layout/Layout";
+import { TopPageComponent } from "../../page-components";
 
-export const Course = ({ menu, page, products, firstCategory }:CourseProps ): JSX.Element => {
+export const TopPage = ({ menu, page, products, firstCategory }:TopPageProps ): JSX.Element => {
 	
 	return(
 		<>
-			{ products && products.length }
+			<TopPageComponent page={page} products={products} firstCategory={firstCategory} />
 		</>
 	);
 };
@@ -29,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
 	if (!params) {
 		return {
 			notFound: true
@@ -70,11 +71,11 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
 	}
 };
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
 	menu: MenuItem[];
 	page: TopPageModel,
 	products: ProductModel[],
 	firstCategory: TopLevelCategory;
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);

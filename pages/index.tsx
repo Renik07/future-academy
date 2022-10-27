@@ -17,6 +17,10 @@ function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 			<P size="s">adasdasdaddsad</P>
 			<P>adasdasdaddsad</P>
 			<P size="l">adasdasdaddsad</P>
+			<Htag tag="h1">H1</Htag>
+			<Htag tag="h2">H2</Htag>
+			<Htag tag="h3">H3</Htag>
+			<Htag tag="h4">H4</Htag>
 			<Tag size="m" color="red">dasdasdadasd</Tag>
 			<Tag size="s" color="grey">dasdasdadasd</Tag>
 			<Tag size="m" color="ghost" href="https://google.com">dasdasdadasd</Tag>
