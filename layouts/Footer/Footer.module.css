@@ -109,7 +109,7 @@
 
 @media (max-width: 650px) {
 	.footer {
-		padding: 20px;
+		padding: 20px 15px;
 		grid-template-areas: 
 			"column1 column2"
 			"column3 column4"
