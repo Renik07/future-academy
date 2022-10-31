@@ -1,0 +1,37 @@
+.input {
+/* 	display: block;
+	width: 100%; */
+	border-radius: 6px;
+	padding: 10px 15px;
+	border: 1px solid transparent;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.input::placeholder {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.light {
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	outline-color: #FFFFFF;
+}
+
+.light::placeholder {
+	color: #A4A4A4;
+}
+
+.dark {
+	background: #00093c1a;
+	outline-color: #00093c1a;
+	color: #000;
+}
+
+.dark::placeholder {
+	color: #4F4F4F;
+}
