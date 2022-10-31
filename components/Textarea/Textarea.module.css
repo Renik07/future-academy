@@ -1,4 +1,4 @@
-.input {
+.textarea {
 	border-radius: 6px;
 	padding: 10px 15px;
 	border: 1px solid transparent;
@@ -8,7 +8,7 @@
 	line-height: 22px;
 }
 
-.input::placeholder {
+.textarea::placeholder {
 	font-family: var(--font-family);
 	font-weight: 400;
 	font-size: 16px;
@@ -16,9 +16,9 @@
 }
 
 .light {
-	background: #FFFFFF;
+	background: var(--white);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-	outline-color: #FFFFFF;
+	outline-color: var(--white);
 }
 
 .light::placeholder {
@@ -28,7 +28,7 @@
 .dark {
 	background: #00093c1a;
 	outline-color: #00093c1a;
-	color: #000;
+	color: var(--black);
 }
 
 .dark::placeholder {
