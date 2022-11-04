@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import { useState } from "react";
-import { Htag, Button, P, Tag, Input, Textarea } from "../components";
+import { Htag, Button, P, Tag, Input, Textarea, Search } from "../components";
 import { Rating } from "../components/Rating/Rating";
 import { withLayout } from "../layouts/Layout/Layout";
 import axios from "axios";
@@ -31,6 +31,7 @@ function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 			<Input type="light" placeholder="adasdasd" />
 			<Textarea type="dark" placeholder="adasdasd" />
 			<Textarea type="light" placeholder="adasdasd" />
+			<Search  />
 		</>
   );
 }
