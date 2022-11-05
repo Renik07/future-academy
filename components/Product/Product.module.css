@@ -1,0 +1,172 @@
+.product {
+	display: grid;
+	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] auto [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
+	margin-bottom: 30px;
+	padding: 30px 30px 15px;
+}
+
+.logo {
+	grid-column: start / logoend;
+	grid-row: 1 / span 2;
+}
+
+.title {
+	grid-column: titlestart / middle;
+}
+
+.price, .priceTitle {
+	grid-column: pricestart / priceend;
+}
+
+.credit, .creditTitle {
+	grid-column: creditstart / creditend;
+}
+
+.rating, .ratingTitle {
+	grid-column: ratingstart / end;
+}
+
+.tags {
+	grid-column: titlestart / middle;
+}
+
+.line {
+	grid-column: start / end;
+}
+
+.desc {
+	grid-column: start / end;
+}
+
+.features {
+	grid-column: start / middle;
+}
+.advBlock {
+	grid-column: middle / end;
+}
+
+.actions {
+	grid-column: start / end;
+}
+
+/*  */
+
+.logo img {
+	border-radius: 5px;
+}
+
+.title {
+	align-self: center;
+
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 27px;
+	color: #3B434E;
+}
+
+.price, .credit {
+	align-self: center;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 27px;
+	color: #3B434E;
+}
+
+.month {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.rating {
+	align-self: center;
+}
+
+.advBlock {
+
+}
+
+.advantages {
+	margin-bottom: 20px;
+	padding-left: 15px;
+	border-left: 3px solid #1DC47E;
+	border-radius: 2px;
+}
+
+.advantages h4, 
+.disadvantages h4 {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 22px;
+	color: #3B434E;
+	margin-bottom: 5px;
+}
+
+.advantages p, 
+.disadvantages p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: #3B434E;
+}
+
+.disadvantages {
+	margin-bottom: 20px;
+	padding-left: 15px;
+	border-left: 3px solid #FC836D;
+	border-radius: 2px;
+}
+
+.priceTitle {
+
+}
+
+.creditTitle {
+
+}
+
+.ratingTitle {
+
+}
+
+.desc {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #3B434E;
+	margin-bottom: 15px;
+}
+
+.moreButton {
+	margin-right: 20px;
+}
+
+.features {
+	padding-right: 60px;
+}
+
+.characteristics {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 15px;
+}
+
+.characteristicName {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 32px;
+	color: #3B434E;
+}
+
+.dots {
+	border-bottom: 1px dashed #C4C4C4;
+	margin-bottom: 10px;
+}
+
+.characteristicValue {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	color: #3B434E;
+	text-align: right;
+}

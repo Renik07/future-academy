@@ -31,7 +31,7 @@
 }
 
 .ghost {
-	border: 1px solid var(--primary);
+	border: 1px solid #EBEBEB;
 	background-color: none;
 }
 

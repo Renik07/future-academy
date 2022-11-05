@@ -57,8 +57,8 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}:RatingP
 
 
 	return (
-		<div {...props}>
+		<span {...props}>
 			{ ratingArray.map((r, i) => <span key={i}> {r} </span>) }
-		</div>
+		</span>
 	);
 };

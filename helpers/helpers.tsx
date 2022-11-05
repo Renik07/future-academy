@@ -13,5 +13,5 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
 	{ route: "products", name: "Товары", icon: <ProductsIcon />, id: TopLevelCategory.Products}
 ];
 
-/* HhData.tsx */
+/* HhData.tsx, Product.tsx */
 export const salaryRu = (value: number) => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
