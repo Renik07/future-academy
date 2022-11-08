@@ -1,6 +1,6 @@
 .product {
 	display: grid;
-	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] auto [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
+	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] auto [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] 1fr [end];
 	margin-bottom: 30px;
 	padding: 30px 30px 15px;
 }
@@ -18,19 +18,24 @@
 	grid-column: pricestart / priceend;
 }
 
+.price {
+	
+}
+
 .credit, .creditTitle {
 	grid-column: creditstart / creditend;
 }
 
 .rating, .ratingTitle {
 	grid-column: ratingstart / end;
+	justify-self: flex-end;
 }
 
 .tags {
 	grid-column: titlestart / middle;
 }
 
-.line {
+.hr {
 	grid-column: start / end;
 }
 
@@ -47,6 +52,9 @@
 
 .actions {
 	grid-column: start / end;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 20px;
 }
 
 /*  */
@@ -65,7 +73,7 @@
 }
 
 .price, .credit {
-	align-self: center;
+	align-self: flex-end;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 27px;
@@ -79,7 +87,7 @@
 }
 
 .rating {
-	align-self: center;
+	align-self: flex-end;
 }
 
 .advBlock {
@@ -87,7 +95,6 @@
 }
 
 .advantages {
-	margin-bottom: 20px;
 	padding-left: 15px;
 	border-left: 3px solid #1DC47E;
 	border-radius: 2px;
@@ -111,6 +118,7 @@
 }
 
 .disadvantages {
+	margin-top: 20px;
 	margin-bottom: 20px;
 	padding-left: 15px;
 	border-left: 3px solid #FC836D;
@@ -138,7 +146,7 @@
 }
 
 .moreButton {
-	margin-right: 20px;
+	
 }
 
 .features {
@@ -169,4 +177,124 @@
 	line-height: 22px;
 	color: #3B434E;
 	text-align: right;
+}
+
+@media screen and (max-width: 1225px) {
+	.product {
+		grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+		grid-template-areas:
+		"logo . title title title title title"
+		"logo . tags tags tags tags tags"
+		"price price price . credit . rating"
+		"priceTitle priceTitle priceTitle . creditTitle . ratingTitle"
+		"hr hr hr hr hr hr hr"
+		"desc desc desc desc desc desc desc"
+		"features features features features features features features"
+		"advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
+		"hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+		"actions actions actions actions actions actions actions"
+		;
+	}
+	.logo {
+		grid-area: logo;
+		margin-bottom: 20px;
+	}
+	.title {
+		grid-area: title;
+	}
+	
+	.tags {
+		grid-area: tags;
+	}
+	.price {
+		grid-area: price;
+	}
+	.credit {
+		grid-area: credit;
+	}
+	.rating {
+		grid-area: rating;
+		justify-self: flex-start;
+	}
+	.priceTitle {
+		grid-area: priceTitle;
+	}
+	.creditTitle {
+		grid-area: creditTitle;
+	}
+	.ratingTitle {
+		grid-area: ratingTitle;
+		justify-self: flex-start;
+	}
+	.hr {
+		grid-area: hr;
+	}
+	.desc {
+		grid-area: desc;
+	}
+	.features {
+		grid-area: features;
+		padding-right: 0;
+		margin-bottom: 20px;
+	}
+	.advBlock {
+		grid-area: advBlock;
+	}
+	.hr2 {
+		grid-area: hr2;
+	}
+	.actions {
+		grid-area: actions;
+	}
+}
+
+@media screen and (max-width: 820px) {
+	.product {
+		grid-template-columns: 70px 30px 1fr;
+		grid-template-areas:
+		"logo . title"
+		"logo . tags"
+		"priceTitle priceTitle price"
+		"creditTitle creditTitle credit"
+		"rating rating rating"
+		"ratingTitle ratingTitle ratingTitle"
+		"hr hr hr"
+		"desc desc desc"
+		"features features features"
+		"advBlock advBlock advBlock"
+		"hr2 hr2 hr2"
+		"actions actions actions"
+		;
+	}
+	.price, .credit {
+		align-self: center;
+		margin-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.product {
+		grid-template-columns: 1fr;
+		padding: 30px 15px;
+		grid-template-areas:
+			"logo"
+			"title"
+			"tags"
+			"priceTitle"
+			"price"
+			"creditTitle"
+			"credit"
+			"rating"
+			"ratingTitle"
+			"hr"
+			"desc"
+			"features"
+			"advBlock"
+			"hr2"
+			"actions"
+		;
+	}
+	.title {
+		margin-bottom: 10px;
+	}
 }
