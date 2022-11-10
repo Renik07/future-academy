@@ -1,7 +1,7 @@
 .product {
 	display: grid;
 	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] auto [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] 1fr [end];
-	margin-bottom: 30px;
+	margin-top: 30px;
 	padding: 30px 30px 15px;
 }
 
@@ -179,6 +179,21 @@
 	text-align: right;
 }
 
+.reviews {
+
+}
+
+.closed {
+	overflow: hidden;
+	max-height: 0;
+	padding: 0;
+}
+
+.opened {
+	max-height: auto;
+	padding: 25px 30px 30px;
+}
+
 @media screen and (max-width: 1225px) {
 	.product {
 		grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
@@ -296,5 +311,8 @@
 	}
 	.title {
 		margin-bottom: 10px;
+	}
+	.opened {
+		padding: 25px 15px;
 	}
 }

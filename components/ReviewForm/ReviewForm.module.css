@@ -1,0 +1,103 @@
+.reviewForm {
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	gap: 20px 30px;
+	grid-template-areas: 
+		"name title rating"
+		"text text text"
+		"submit submit submit"
+	;
+}
+
+.name {
+	grid-area: name;
+}
+
+.title {
+	grid-area: title;
+}
+
+.rating {
+	grid-area: rating;
+	justify-self: flex-end;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	color: #3B434E;
+}
+
+.text {
+	grid-area: text;
+}
+.text textarea {
+	width: 100%;
+	max-width: 100%;
+}
+
+.submit {
+	grid-area: submit;
+}
+
+.submit span {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #3B434E;
+}
+
+.button {
+	margin-right: 15px;
+}
+
+.success {
+	position: relative;
+	border-radius: 5px;
+	padding: 15px;
+	margin-top: 15px;
+	background: var(--green-light)
+}
+
+.success h4 {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.success p {
+	font-size: 14px;
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+@media screen and (max-width: 1130px) {
+	.reviewForm {
+		grid-template-areas: 
+			"name title title"
+			"rating rating rating"
+			"text text text"
+			"submit submit submit"
+		;
+	}
+	.rating {
+		justify-self: flex-start;
+	}
+}
+@media screen and (max-width: 870px) {
+	.reviewForm {
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			"name"
+			"title"
+			"rating"
+			"text"
+			"submit"
+		;
+	}
+}
