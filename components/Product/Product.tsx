@@ -10,6 +10,7 @@ import { Divider } from "../Divider/Divider";
 import { useState } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
+import Image from "next/image";
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
 	const [isOpenedReviews, setIsOpenedReviews] = useState<boolean>(false);
@@ -17,7 +18,14 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 	return (
 		<>
 			<Card className={styles.product}>
-				<div className={styles.logo}><img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} /></div>
+				<div className={styles.logo}>
+					<Image 
+						src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
+						alt={product.title}
+						width={70}
+						height={70}
+					/>
+				</div>
 				<h3 className={styles.title}>{ product.title }</h3>
 				<div className={styles.price}>{ salaryRu(product.price) }</div>
 				<div className={styles.credit}>
@@ -66,7 +74,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 						appearance="ghost" 
 						arrow={isOpenedReviews ? "down" : "right"}
 						onClick={() => setIsOpenedReviews(!isOpenedReviews)}
-					>Читать отзывы</Button>
+					>{product.reviews.length > 0 ? "Читать отзывы" : "Написать отзыв"}</Button>
 				</div>
 			</Card>
 			<Card 
@@ -77,10 +85,10 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				})}
 			>
 				{ product.reviews.map(r => 
-					<>
-						<Review key={r._id} review={r} />
+					<div key={r._id}>
+						<Review review={r} />
 						<Divider />
-					</>) 
+					</div>) 
 				}
 				<ReviewForm productId={product._id} />
 			</Card>

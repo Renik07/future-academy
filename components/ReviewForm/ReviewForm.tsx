@@ -1,27 +1,60 @@
 import { ReviewFormProps } from "./ReviewForm.props";
 import styles from './ReviewForm.module.css';
 import CloseIcon from './close.svg';
-import cn from 'classnames';
 import { Rating } from "../Rating/Rating";
 import { Input } from "../Input/Input";
 import { Textarea } from "../Textarea/Textarea";
 import { Button } from "../Button/Button";
+import { useForm, Controller } from "react-hook-form";
+import { IReviewForm } from "./ReviewForm.interface";
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):JSX.Element => {
+	const { register, control, handleSubmit, formState: { errors } } = useForm<IReviewForm>();
+
+	const onSubmit = (data: IReviewForm) => {
+		console.log(data);
+	};
 	return (
-		<>
+		<form onSubmit={handleSubmit(onSubmit)}>
 			<div 
 				className={styles.reviewForm}
 				{...props}
 			>
-				<Input className={styles.name} placeholder="Имя" type="light" />
-				<Input className={styles.title} placeholder="Заголовок отзыва" type="light" />
+				<Input 
+					className={styles.name} 
+					{...register("name", { required: {value: true, message: "Заполните имя"} })} 
+					error={errors.name}
+					placeholder="Имя" 
+					type="light" />
+				<Input 
+					className={styles.title} 
+					{...register("title", { required: {value: true, message: "Заполните заголовок отзыва"} })} 
+					error={errors.title}
+					placeholder="Заголовок отзыва" 
+					type="light" />
 				<div className={styles.rating}>
 					<span>Оценка:</span>
-					<Rating rating={0} />
+					<Controller 
+						control={control}
+						name="rating"
+						rules={{ required: {value: true, message: "Оцените курс"}}}
+						render={({ field }) => (
+							<Rating 
+								isEditable 
+								setRating={field.onChange} 
+								rating={field.value} 
+								ref={field.ref}
+								error={errors.rating}
+							/>
+						)}
+					/>
 				</div>
 				<div className={styles.text}>
-					<Textarea placeholder="Текст отзыва" type="light" />
+					<Textarea 
+						{...register("description", { required: {value: true, message: "Заполните текст отзыва"} })} 
+						error={errors.description}
+						placeholder="Текст отзыва" 
+						type="light" />
 				</div>
 				<div className={styles.submit}>
 					<Button className={styles.button} appearance="primary">Отправить</Button>
@@ -33,6 +66,6 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 				<p>Отзыв будет опубликован сразу же после модерации.</p>
 				<CloseIcon className={styles.close} />
 			</div>
-		</>
+		</form>
 	);
 };
