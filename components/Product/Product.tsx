@@ -7,16 +7,25 @@ import { Tag } from "../Tag/Tag";
 import { Button } from "../Button/Button";
 import { salaryRu, wordDecl } from "../../helpers/helpers";
 import { Divider } from "../Divider/Divider";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import Image from "next/image";
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
 	const [isOpenedReviews, setIsOpenedReviews] = useState<boolean>(false);
+	const refReview = useRef<HTMLDivElement>(null);
+
+	const scrollToReview = () => {
+		setIsOpenedReviews(true);
+		refReview.current?.scrollIntoView({
+			behavior: "auto",
+			block: "start"
+		});
+	};
 
 	return (
-		<>
+		<div className={className} {...props}>
 			<Card className={styles.product}>
 				<div className={styles.logo}>
 					<Image 
@@ -36,7 +45,13 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				<div className={styles.tags}>{ product.categories.map(tag => <Tag size="s" key={tag}>{tag}</Tag>) }</div>
 				<div className={styles.priceTitle}>цена</div>
 				<div className={styles.creditTitle}>кредит</div>
-				<div className={styles.ratingTitle}>{product.reviewCount} {wordDecl(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}</div>
+				<a 
+					href="#refReview" 
+					className={styles.ratingTitle}
+					onClick={scrollToReview}
+				>
+					{product.reviewCount} {wordDecl(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+				</a>
 				<Divider className={styles.hr} />
 				<p className={styles.desc}>{ product.description }</p>
 				<div className={styles.features}>
@@ -83,6 +98,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 					[styles.opened]: isOpenedReviews,
 					[styles.closed]: !isOpenedReviews
 				})}
+				ref={refReview}
 			>
 				{ product.reviews.map(r => 
 					<div key={r._id}>
@@ -92,6 +108,6 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				}
 				<ReviewForm productId={product._id} />
 			</Card>
-		</>
+		</div>
 	);
 };

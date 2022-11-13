@@ -6,13 +6,31 @@ import { Input } from "../Input/Input";
 import { Textarea } from "../Textarea/Textarea";
 import { Button } from "../Button/Button";
 import { useForm, Controller } from "react-hook-form";
-import { IReviewForm } from "./ReviewForm.interface";
+import { IReviewForm, IReviewSentResponse } from "./ReviewForm.interface";
+import axios from "axios";
+import cn from 'classnames';
+import { API } from "../../helpers/api";
+import { useState } from "react";
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):JSX.Element => {
-	const { register, control, handleSubmit, formState: { errors } } = useForm<IReviewForm>();
+	const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
+	const [isSuccessSentForm, setIsSuccessSentForm] = useState<boolean>(false);
+	const [errorMessage, setErrorMessage] = useState<string>();
 
-	const onSubmit = (data: IReviewForm) => {
-		console.log(data);
+	const onSubmit = async (dataForm: IReviewForm) => {
+		try {
+			const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, {...dataForm, productId});
+			if (data.message) {
+				setIsSuccessSentForm(true);
+				reset();
+			} else {
+				setErrorMessage('Что-то пошло не так');
+			}
+		} catch (error) {
+			if (error instanceof Error) {
+				setErrorMessage(error.message);
+			}
+		}
 	};
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -58,14 +76,22 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 				</div>
 				<div className={styles.submit}>
 					<Button className={styles.button} appearance="primary">Отправить</Button>
-					<span>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
+					<span>* Перед публикацией отзыв пройдет предварительную модерацию</span>
 				</div>
 			</div>
-			<div className={styles.success}>
-				<h4>Спасибо за отзыв.</h4>
-				<p>Отзыв будет опубликован сразу же после модерации.</p>
-				<CloseIcon className={styles.close} />
-			</div>
+			{isSuccessSentForm && 
+				<div className={cn(styles.panel, styles.success)}>
+					<h4>Спасибо за отзыв.</h4>
+					<p>Отзыв будет опубликован сразу же после модерации.</p>
+					<CloseIcon onClick={() => setIsSuccessSentForm(false)} className={styles.close} />
+				</div>
+			}
+			{errorMessage && 
+				<div className={cn(styles.panel, styles.error)}>
+					<h4>Что-то пошло не так. Обновите страницу и повторите попытку.</h4>
+					<CloseIcon onClick={() => setErrorMessage(undefined)} className={styles.close} />
+				</div>
+			}
 		</form>
 	);
 };

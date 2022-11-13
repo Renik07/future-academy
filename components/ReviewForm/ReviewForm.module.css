@@ -53,12 +53,22 @@
 	margin-right: 15px;
 }
 
-.success {
+.panel {
 	position: relative;
 	border-radius: 5px;
 	padding: 15px;
 	margin-top: 15px;
-	background: var(--green-light)
+}
+
+.success {
+	background: var(--green-light);
+}
+
+.error {
+	background: var(--red-light);
+}
+.error .close path {
+	stroke: var(--red);
 }
 
 .success h4 {
@@ -71,6 +81,7 @@
 }
 
 .close {
+	cursor: pointer;
 	position: absolute;
 	top: 15px;
 	right: 15px;

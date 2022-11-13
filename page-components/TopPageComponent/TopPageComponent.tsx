@@ -13,6 +13,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 		dispatchSortProducts({type: sort});
 	};
 
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.title}>
