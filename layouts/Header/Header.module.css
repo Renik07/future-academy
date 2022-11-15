@@ -1,0 +1,50 @@
+.header {
+
+}
+
+.container {
+	max-width: 1185px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 60px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.nav {
+
+}
+
+.list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+
+	list-style: none;
+}
+
+.item {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	white-space: nowrap;
+}
+
+.item a {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.enter {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.tel {
+	margin-left: auto;
+	white-space: nowrap;
+}
