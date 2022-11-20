@@ -6,6 +6,7 @@ import { Sidebar } from "../Sidebar/Sidebar";
 import { Footer } from "../Footer/Footer";
 import { FC } from "react";
 import { IPageContext, PageContextProvider } from "../../context/page.context";
+import { Up } from "../../components/Up/Up";
 
 const Layout = ({ children }: LayoutProps):JSX.Element => {
 	return (
@@ -16,6 +17,7 @@ const Layout = ({ children }: LayoutProps):JSX.Element => {
 				{ children }
 			</main>
 			<Footer className={styles.footer}/>
+			<Up />
 		</div>
 	);
 };
