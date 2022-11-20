@@ -7,12 +7,14 @@ import { Tag } from "../Tag/Tag";
 import { Button } from "../Button/Button";
 import { salaryRu, wordDecl } from "../../helpers/helpers";
 import { Divider } from "../Divider/Divider";
-import { useRef, useState } from "react";
+import { ForwardedRef, forwardRef, useRef, useState } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+// eslint-disable-next-line react/display-name
+export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	const [isOpenedReviews, setIsOpenedReviews] = useState<boolean>(false);
 	const refReview = useRef<HTMLDivElement>(null);
 
@@ -25,7 +27,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 	};
 
 	return (
-		<div className={className} {...props}>
+		<div className={className} {...props} ref={ref}>
 			<Card className={styles.product}>
 				<div className={styles.logo}>
 					<Image 
@@ -110,4 +112,6 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			</Card>
 		</div>
 	);
-};
+}));
+
+Product.displayName = 'Product';
