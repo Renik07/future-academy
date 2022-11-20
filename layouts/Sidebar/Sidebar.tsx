@@ -1,12 +1,11 @@
 import { Search } from "../../components";
 import { Menu } from "../Menu/Menu";
 import { SidebarProps } from "./Sidebar.props";
-/* import styles from './P.module.css';
-import cn from 'classnames'; */
+import styles from './Sidebar.module.css';
 
 export const Sidebar = ({ ...props }: SidebarProps):JSX.Element => {
 	return (
-		<div {...props}>
+		<div className={styles.sidebar} {...props}>
 			<Search />
 			<Menu />
 		</div>
