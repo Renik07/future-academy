@@ -27,11 +27,13 @@ export const Menu = (): JSX.Element => {
 	const variantsChildren = {
 		visible: {
 			opacity: 1,
-			height: 29
+			height: 'auto',
+			marginBottom: 10
 		},
 		hidden: {
 			opacity: 0,
-			height: 0
+			height: 0,
+			marginBottom: 0
 		}
 	};
 
@@ -82,7 +84,7 @@ export const Menu = (): JSX.Element => {
 								initial={m.isOpened ? "visible" : "hidden"}
 								animate={m.isOpened ? "visible" : "hidden"}
 								variants={variants}
-								className={cn(styles.secondLevelBlock)}
+								className={styles.secondLevelBlock}
 							>
 								{ buildThirdLevel(m.pages, menuItem.route) }
 							</motion.div>

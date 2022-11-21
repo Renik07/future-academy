@@ -17,6 +17,16 @@ import { motion } from "framer-motion";
 export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	const [isOpenedReviews, setIsOpenedReviews] = useState<boolean>(false);
 	const refReview = useRef<HTMLDivElement>(null);
+	const variants = {
+		visible: {
+			opacity: 1,
+			height: 'auto'
+		},
+		hidden: {
+			opacity: 0,
+			height: 0
+		}
+	};
 
 	const scrollToReview = () => {
 		setIsOpenedReviews(true);
@@ -94,22 +104,25 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 					>{product.reviews.length > 0 ? "Читать отзывы" : "Написать отзыв"}</Button>
 				</div>
 			</Card>
-			<Card 
-				color="blue-light"
-				className={cn(styles.reviews, {
-					[styles.opened]: isOpenedReviews,
-					[styles.closed]: !isOpenedReviews
-				})}
-				ref={refReview}
+			<motion.div
+				initial='hidden'
+				animate={isOpenedReviews ? 'visible' : 'hidden'}
+				variants={variants}
 			>
-				{ product.reviews.map(r => 
-					<div key={r._id}>
-						<Review review={r} />
-						<Divider />
-					</div>) 
-				}
-				<ReviewForm productId={product._id} />
-			</Card>
+				<Card 
+					color="blue-light"
+					className={cn(styles.reviews)}
+					ref={refReview}
+				>
+					{ product.reviews.map(r => 
+						<div key={r._id}>
+							<Review review={r} />
+							<Divider />
+						</div>) 
+					}
+					<ReviewForm productId={product._id} />
+				</Card>
+			</motion.div>
 		</div>
 	);
 }));

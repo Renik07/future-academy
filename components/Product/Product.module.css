@@ -180,18 +180,12 @@
 }
 
 .reviews {
-
+	padding: 25px 30px 30px;
+	overflow: hidden;
 }
 
 .closed {
-	overflow: hidden;
-	max-height: 0;
-	padding: 0;
-}
-
-.opened {
-	max-height: auto;
-	padding: 25px 30px 30px;
+	pointer-events: none;
 }
 
 @media screen and (max-width: 1225px) {
@@ -312,7 +306,7 @@
 	.title {
 		margin-bottom: 10px;
 	}
-	.opened {
+	.reviews {
 		padding: 25px 15px;
 	}
 }
