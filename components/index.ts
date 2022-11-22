@@ -1,5 +1,6 @@
 export * from './Htag/Htag';
 export * from './Button/Button';
+export * from './ButtonIcon/ButtonIcon';
 export * from './Input/Input';
 export * from './Tag/Tag';
 export * from './P/P';
