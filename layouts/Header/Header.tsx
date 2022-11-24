@@ -11,8 +11,8 @@ export const Header = ({ ...props }: HeaderProps):JSX.Element => {
 			{...props}
 		>
 			<div className={styles.container}>
-			<Logo />
-			<nav className={styles.nav}>
+			<Logo className={styles.logo} />
+			<nav className={styles.menu}>
 				<ul className={styles.list}>
 					<li className={styles.item}>
 						<a href="">

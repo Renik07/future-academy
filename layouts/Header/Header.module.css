@@ -5,15 +5,23 @@
 .container {
 	max-width: 1185px;
 	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	gap: 60px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	display: grid;
+	grid-template-columns: 100px auto auto 75px;
+	align-items: center;
+	gap: 40px;
+	grid-template-areas: 
+		"logo menu tel enter"
+	;
 }
 
-.nav {
+.logo {
+	grid-area: logo;
+}
 
+.menu {
+	grid-area: menu;
 }
 
 .list {
@@ -39,12 +47,60 @@
 }
 
 .enter {
+	grid-area: enter;
+	justify-self: self-end;
 	display: flex;
 	align-items: center;
 	gap: 5px;
 }
 
 .tel {
-	margin-left: auto;
+	grid-area: tel;
+	justify-self: self-end;
 	white-space: nowrap;
+}
+
+@media screen and (max-width: 980px) {
+	.list {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	.item {
+		flex: 0 1 32%;
+	}
+}
+
+@media screen and (max-width: 765px) {
+	.container {
+		padding: 20px 15px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.container {
+		gap: 10px 30px;
+		grid-template-areas: 
+		"logo menu menu menu"
+		"logo tel tel enter"
+		;
+	}
+	.list {
+		justify-content: flex-end;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.container {
+		grid-template-columns: 100px auto;
+		grid-template-areas: 
+		"logo menu"
+		"tel enter"
+		;
+	}
+	.list {
+		gap: 5px;
+	}
+	.tel {
+		justify-self: auto;
+	}
 }
