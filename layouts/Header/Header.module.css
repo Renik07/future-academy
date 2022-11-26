@@ -60,6 +60,37 @@
 	white-space: nowrap;
 }
 
+/*  */
+
+.buttonOpen {
+	display: none;
+}
+
+.menuMobile {
+	display: none;
+	position: fixed;
+	z-index: 10;
+	overflow-y: scroll;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #F5F6F8;
+	padding: 10px;
+}
+
+.buttonClose {
+	position: fixed;
+	z-index: 10;
+	top: 12px;
+	left: 13px;
+
+}
+
+.sidebar {
+
+}
+
 @media screen and (max-width: 980px) {
 	.list {
 		flex-wrap: wrap;
@@ -73,6 +104,12 @@
 @media screen and (max-width: 765px) {
 	.container {
 		padding: 20px 15px;
+	}
+	.buttonOpen {
+		display: block;
+	}
+	.menuMobile {
+		display: initial;
 	}
 }
 

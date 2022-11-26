@@ -16,3 +16,9 @@
 	width: 100%;
 	padding-right: 50px;
 }
+
+@media screen and (max-width: 765px) {
+	.input {
+		padding-left: 50px;
+	}
+}
