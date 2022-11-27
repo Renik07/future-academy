@@ -1,0 +1,40 @@
+.icon {
+	display: inline-block;
+	position: absolute;
+}
+
+.right {
+	animation: right-rotate 10s linear infinite;
+}
+
+.left {
+	animation: left-rotate 10s linear infinite;
+}
+
+.speedx1 {
+	animation-duration: 15s;
+}
+.speedx2 {
+	animation-duration: 10s;
+}
+.speedx3 {
+	animation-duration: 5s;
+}
+
+@keyframes right-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes left-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}

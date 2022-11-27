@@ -1,6 +1,7 @@
 export * from './Htag/Htag';
 export * from './Button/Button';
 export * from './ButtonIcon/ButtonIcon';
+export * from './AnimatedIcon/AnimatedIcon';
 export * from './Input/Input';
 export * from './Tag/Tag';
 export * from './P/P';

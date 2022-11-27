@@ -1,0 +1,100 @@
+.intro {
+	display: flex;
+}
+
+.content {
+	flex: 0 1 55%;
+	color: var(--white);
+	padding: 125px 85px 175px 20px;
+	background: radial-gradient(#27AAE1 2%, transparent 5%), var(--primary);
+	background-position: 0% 0%;
+	background-size: 30px 29px;
+	animation: animate-bg 25s linear infinite;
+}
+
+.container {
+	max-width: 575px;
+	margin-left: auto;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 80px;
+	margin-bottom: 40px;
+}
+
+.text {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.promo {
+	flex: 0 1 45%;
+	background: url("./images/intro.jpg") no-repeat;
+	background-size: cover;
+}
+
+@media screen and (max-width: 1100px) {
+	.content {
+		padding: 90px 40px 90px 20px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.title {
+		font-size: 26px;
+		line-height: 45px;
+	}
+	.text {
+		font-size: 17px;
+		line-height: 21px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.intro {
+		flex-direction: column-reverse;
+	}
+	.promo {
+		min-height: 375px;
+	}
+	.container {
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.promo {
+		min-height: 300px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.content {
+		padding: 30px 20px 40px;
+		background-size: 20px 21px;
+	}
+	.title {
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 20px;
+	}
+	.promo {
+		min-height: 250px;
+	}
+	.text {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
+
+@keyframes animate-bg {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}

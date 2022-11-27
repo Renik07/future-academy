@@ -1,17 +1,19 @@
 import { GetStaticProps } from "next";
 import { useState } from "react";
-import { Htag, Button, P, Tag, Input, Textarea, Search } from "../components";
-import { Rating } from "../components/Rating/Rating";
-import { withLayout } from "../layouts/Layout/Layout";
+/* import { Htag, Button, P, Tag, Input, Textarea, Search } from "../components";
+import { Rating } from "../components/Rating/Rating"; */
 import axios from "axios";
 import { MenuItem } from "../intefaces/menu.interface";
 import { API } from "../helpers/api";
+import { withMainLayout } from "../layouts/MainLayout/MainLayout";
+import { Intro } from "../layouts/Intro/Intro";
 
 function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 	const [rating, setRating] = useState<number>(5);
   return (
 		<>
-			<Htag tag="h1">Texttttt</Htag>
+		<Intro />
+{/* 			<Htag tag="h1">Texttttt</Htag>
 			<Button appearance="primary" arrow="right">Узнать подробнее</Button>
 			<Button appearance="ghost" arrow="down">Узнать подробнее</Button>
 			<Button appearance="form" arrow="none">Узнать подробнее</Button>
@@ -32,12 +34,13 @@ function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 			<Input type="light" placeholder="adasdasd" />
 			<Textarea type="dark" placeholder="adasdasd" />
 			<Textarea type="light" placeholder="adasdasd" />
-			<Search  />
+			<Search  /> */}
+			{/* <Rating rating={rating} isEditable setRating={setRating} /> */}
 		</>
   );
 }
 
-export default withLayout(Home);
+export default withMainLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const firstCategory = 0;

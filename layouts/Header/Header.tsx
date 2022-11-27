@@ -8,6 +8,7 @@ import { Sidebar } from "../Sidebar/Sidebar";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const Header = ({ ...props }: HeaderProps):JSX.Element => {
 	const [isOpenedMenu, setIsOpenedMenu] = useState<boolean>(false);
@@ -52,17 +53,23 @@ export const Header = ({ ...props }: HeaderProps):JSX.Element => {
 			{...props}
 		>
 			<div className={styles.container}>
-			<Logo className={styles.logo} />
+			<Link href="/">
+				<Logo className={styles.logo} />
+			</Link>
 			<nav className={styles.menu}>
 				<ul className={styles.list}>
 					<li className={styles.item}>
+					<Link href="/courses">
 						<a href="">
 							<CoursesIcon />
 							Все курсы
 						</a>
+					</Link>
 					</li>
 					<li className={styles.item}>
-						<a href="">Мероприятия</a>
+						<Link href="/courses">
+							<a>Мероприятия</a>
+						</Link>
 					</li>
 					<li className={styles.item}>
 						<a href="">Базы знаний</a>
