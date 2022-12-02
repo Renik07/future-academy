@@ -8,6 +8,7 @@ import { API } from "../helpers/api";
 import { withMainLayout } from "../layouts/MainLayout/MainLayout";
 import { Intro } from "../layouts/Intro/Intro";
 import { Choose } from "../layouts/Choose/Choose";
+import { Promo } from "../layouts/Promo/Promo";
 
 function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 	const [rating, setRating] = useState<number>(5);
@@ -15,6 +16,7 @@ function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 		<>
 		<Intro />
 		<Choose />
+		<Promo />
 {/* 			<Htag tag="h1">Texttttt</Htag>
 			<Button appearance="primary" arrow="right">Узнать подробнее</Button>
 			<Button appearance="ghost" arrow="down">Узнать подробнее</Button>
