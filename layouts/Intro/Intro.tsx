@@ -13,10 +13,11 @@ export const Intro = ({ ...props }: IntroProps):JSX.Element => {
 				<div className={styles.container}>
 					<h1 className={styles.title}>Образовательная платформа Future Academy</h1>
 					<p className={styles.text}>Актуальные знания для новичков и профессионалов</p>
+					<AnimatedIcon className={styles.crossIcon} icon="cross" rotate="right" />
+					<AnimatedIcon className={styles.circleIcon} speed="3" icon="circle" rotate="left" />
+					<AnimatedIcon className={styles.trianleIcon} speed="1" icon="triangle" rotate="left" />
+					<AnimatedIcon className={styles.vectorIcon} icon="vector" />
 				</div>
-				<AnimatedIcon speed="1" icon="cross" rotate="right" />
-				<AnimatedIcon icon="cross" rotate="right" />
-				<AnimatedIcon speed="3" icon="cross" rotate="right" />
 			</div>
 			<div className={styles.promo}></div>
 		</section>
