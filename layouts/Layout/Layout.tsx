@@ -8,6 +8,7 @@ import { IPageContext, PageContextProvider } from "../../context/page.context";
 import { Up } from "../../components/Up/Up";
 
 const Layout = ({ children }: LayoutProps):JSX.Element => {
+	
 	return (
 		<div className={styles.wrapper}>
 			<Header className={styles.header}/>

@@ -4,12 +4,14 @@ import { ParsedUrlQuery } from "querystring";
 import { API } from "../../helpers/api";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { MenuItem } from "../../intefaces/menu.interface";
+import { Categories } from "../../layouts/Categories/Categories";
 import { withLayout } from "../../layouts/Layout/Layout";
 
-const Type = ({ firstCategory }: TypeProps):JSX.Element => {
+const Type = ({ firstCategory, menu }: TypeProps):JSX.Element => {
+	
 	return (
 		<>
-			Courses: { firstCategory }
+			<Categories menu={menu} />
 		</>
 	);
 };

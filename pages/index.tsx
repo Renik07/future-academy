@@ -1,5 +1,5 @@
-import { GetStaticProps, GetStaticPropsContext } from "next";
-import { useState } from "react";
+import { GetStaticProps } from "next";
+/* import { useState } from "react"; */
 /* import { Htag, Button, P, Tag, Input, Textarea, Search } from "../components";
 import { Rating } from "../components/Rating/Rating"; */
 import axios from "axios";
@@ -11,14 +11,11 @@ import { Choose } from "../layouts/Choose/Choose";
 import { Promo } from "../layouts/Promo/Promo";
 import { Grid } from "../layouts/Grid/Grid";
 import { Reviews } from "../layouts/Reviews/Reviews";
-import { ProductModel, ReviewModel } from "../intefaces/product.interface";
-import { TopPageModel } from "../intefaces/page.interface";
 import { Welcome } from "../layouts/Welcome/Welcome";
-import { ParsedUrlQuery } from "querystring";
 import { Form } from "../layouts/Form/Form";
 
 function Home({ menu, firstCategory }:HomeProps): JSX.Element {
-	const [rating, setRating] = useState<number>(5);
+	/* const [rating, setRating] = useState<number>(5); */
 	
   return (
 		<>

@@ -18,13 +18,6 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 		});
 	};
 
-	const handleKeyDown = (event: KeyboardEvent) => {
-		if (event.key === 'Enter') {
-			handleSearch();
-		}
-		
-	};
-
 	return (
 		<div
 			className={cn(styles.search, className)}
@@ -34,7 +27,6 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 				className={styles.input}
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
-				onKeyDown={handleKeyDown}
 				type="light" 
 				placeholder="поиск..." />
 			<Button
