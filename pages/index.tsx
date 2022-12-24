@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetStaticPropsContext } from "next";
 import { useState } from "react";
 /* import { Htag, Button, P, Tag, Input, Textarea, Search } from "../components";
 import { Rating } from "../components/Rating/Rating"; */
@@ -10,15 +10,25 @@ import { Intro } from "../layouts/Intro/Intro";
 import { Choose } from "../layouts/Choose/Choose";
 import { Promo } from "../layouts/Promo/Promo";
 import { Grid } from "../layouts/Grid/Grid";
+import { Reviews } from "../layouts/Reviews/Reviews";
+import { ProductModel, ReviewModel } from "../intefaces/product.interface";
+import { TopPageModel } from "../intefaces/page.interface";
+import { Welcome } from "../layouts/Welcome/Welcome";
+import { ParsedUrlQuery } from "querystring";
+import { Form } from "../layouts/Form/Form";
 
 function Home({ menu, firstCategory }:HomeProps): JSX.Element {
 	const [rating, setRating] = useState<number>(5);
+	
   return (
 		<>
 		<Intro />
 		<Choose />
 		<Promo />
 		<Grid />
+		<Reviews />
+		<Welcome />
+		<Form />
 {/* 			<Htag tag="h1">Texttttt</Htag>
 			<Button appearance="primary" arrow="right">Узнать подробнее</Button>
 			<Button appearance="ghost" arrow="down">Узнать подробнее</Button>

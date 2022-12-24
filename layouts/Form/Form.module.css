@@ -1,0 +1,142 @@
+.form {
+	position: relative;
+	z-index: 10;
+	margin-bottom: -100px;
+}
+
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 55px 20px;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+	background: #FFFFFF;
+	border-radius: 20px;
+	padding: 40px;
+	gap: 50px;
+}
+
+.requestForm {
+	flex: 0 1 440px;
+}
+
+.speech {
+  flex: 0 1 390px;
+	margin-left: auto;
+	position: relative;
+  border: 2px solid #27AAE1;
+	border-radius: 20px;
+  padding: 20px 20px 30px;
+  text-align: center;
+  font-weight: 900;
+  color: #00bfb6;
+  font-family: arial;
+  position: relative;
+	text-align: left;
+}
+
+.speech:before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 8px solid transparent;
+	border-right: 8px solid #27AAE1;
+	border-top: 8px solid #27AAE1;
+	border-bottom: 8px solid transparent;
+	left: -17px;
+	top: 40px;
+}
+
+.speech:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #fff;
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+	left: -12px;
+	top: 42px;
+}
+
+.speechTitle {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	color: var(--black);
+}
+
+.speechLuck {
+	margin-top: 20px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: var(--black);
+}
+
+.owl {
+	transform: scale(1.3);
+	position: absolute;
+	top: 20px;
+	left: -230px;
+}
+
+@media screen and (max-width: 1140px) {
+	.content {
+		flex-direction: column;
+	}
+	.speech {
+		flex: 0 1 auto;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.owl {
+		transform: scale(1);
+		top: -20px;
+    left: -190px;
+	}
+	.requestForm {
+		flex: 0 1 auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.speech {
+		margin-left: 75px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.form {
+		margin-bottom: 0px;
+	}
+}
+
+@media screen and (max-width: 490px) {
+	.content {
+		background: none;
+		padding: 0;
+	}
+	.owl {
+		transform: scale(0.6);
+		left: -150px;
+	}
+	.speech {
+		padding: 10px;
+		margin-left: 50px;
+	}
+	.speechTitle {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	
+	.speechLuck {
+		font-size: 12px;
+		line-height: 16px;
+	}
+}

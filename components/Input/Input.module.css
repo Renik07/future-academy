@@ -3,6 +3,8 @@
 }
 
 .input {
+	max-width: 100%;
+	width: 100%;
 	border-radius: 6px;
 	padding: 10px 15px;
 	border: 1px solid transparent;
