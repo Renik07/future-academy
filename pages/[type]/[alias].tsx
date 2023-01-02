@@ -18,6 +18,8 @@ export const TopPage = ({ menu, page, products, firstCategory }:TopPageProps ): 
 	);
 };
 
+export default withLayout(TopPage);
+
 export const getStaticPaths: GetStaticPaths = async () => {
 	let paths: string[] = [];
 
@@ -78,5 +80,3 @@ interface TopPageProps extends Record<string, unknown> {
 	products: ProductModel[],
 	firstCategory: TopLevelCategory;
 }
-
-export default withLayout(TopPage);

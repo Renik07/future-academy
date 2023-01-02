@@ -67,15 +67,25 @@ export const Header = ({ ...props }: HeaderProps):JSX.Element => {
 					</Link>
 					</li>
 					<li className={styles.item}>
-						<Link href="/courses">
-							<a>Мероприятия</a>
+						<Link href="/activity">
+							<a href="">
+								Мероприятия
+							</a>
 						</Link>
 					</li>
 					<li className={styles.item}>
-						<a href="">Базы знаний</a>
+						<Link href="/knowledge">
+							<a href="">
+								Базы знаний
+							</a>
+						</Link>
 					</li>
 					<li className={styles.item}>
-						<a href="">Карьера</a>
+						<Link href="/career">
+							<a href="">
+								Карьера
+							</a>
+						</Link>
 					</li>
 				</ul>
 			</nav>
@@ -87,30 +97,34 @@ export const Header = ({ ...props }: HeaderProps):JSX.Element => {
 				Войти
 			</a>
 			</div>
-			<motion.div 
-				className={styles.buttonOpen}
-				variants={variants}
-				initial="showButton"
-				animate={isOpenedMenu ? "hiddenButton" : "showButton"}
-			>
-				<ButtonIcon 
-					appearance="white" 
-					icon="burger" 
-					onClick={() => setIsOpenedMenu(true)} />
-			</motion.div>
-			<motion.div 
-				className={styles.menuMobile}
-				variants={variants}
-				initial="closedMenu"
-				animate={isOpenedMenu ? "openedMenu" : "closedMenu"}
-			>
-				<ButtonIcon 
-					className={styles.buttonClose} 
-					appearance="primary" 
-					icon="close" 
-					onClick={() => setIsOpenedMenu(false)} />
-				<Sidebar className={styles.sidebar} />
-			</motion.div>
+			{router.asPath !== "/" && 
+				<div>
+					<motion.div 
+						className={styles.buttonOpen}
+						variants={variants}
+						initial="showButton"
+						animate={isOpenedMenu ? "hiddenButton" : "showButton"}
+					>
+						<ButtonIcon 
+							appearance="white" 
+							icon="burger" 
+							onClick={() => setIsOpenedMenu(true)} />
+					</motion.div>
+					<motion.div 
+						className={styles.menuMobile}
+						variants={variants}
+						initial="closedMenu"
+						animate={isOpenedMenu ? "openedMenu" : "closedMenu"}
+					>
+						<ButtonIcon 
+							className={styles.buttonClose} 
+							appearance="primary" 
+							icon="close" 
+							onClick={() => setIsOpenedMenu(false)} />
+						<Sidebar className={styles.sidebar} />
+					</motion.div>
+				</div>
+			}
 		</header>
 	);
 };

@@ -7,14 +7,20 @@ import LogoIcon from './images/logo.svg';
 import NewspaperIcon from './images/newspaper.svg';
 
 export const Grid = ({ ...props }: GridProps):JSX.Element => {
+
 	return (
 		<section 
 			className={styles.grid} 
 			{...props}
 		>
 			<div className={styles.container}>
-				<div className={styles.blocks}>
-					<Card className={styles.openday} color="red">
+				<div 
+					className={styles.blocks}
+				>
+					<Card 
+						className={styles.openday} 
+						color="red"
+					>
 						<div className={styles.opendayCol1}>
 							<div className={styles.num}>
 								25

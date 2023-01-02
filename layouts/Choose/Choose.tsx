@@ -8,7 +8,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 export const Choose = ({ ...props }: ChooseProps):JSX.Element => {
-
 	return (
 		<section 
 			className={styles.choose} 

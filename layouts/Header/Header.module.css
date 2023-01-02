@@ -17,6 +17,7 @@
 }
 
 .logo {
+	cursor: pointer;
 	grid-area: logo;
 }
 
@@ -64,6 +65,7 @@
 
 .buttonOpen {
 	display: none;
+	padding: 0 15px;	
 }
 
 .menuMobile {
