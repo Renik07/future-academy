@@ -1,19 +1,22 @@
 .reviews {
 	overflow: hidden;
+
 	padding-top: 60px;
 	padding-bottom: 60px;
+
+	animation: animation-bg 25s linear infinite;
 
 	color: var(--white);
 	background: radial-gradient(#27AAE1 2%, transparent 5%), var(--primary);
 	background-position: 0% 0%;
 	background-size: 30px 29px;
-	animation: animation-bg 25s linear infinite;
 }
 
 .content {
 	display: flex;
 	flex-wrap: nowrap;
 	gap: 20px;
+
 	animation: animation-reviews 25s linear infinite;
 }
 
@@ -23,77 +26,88 @@
 
 .review {
 	flex: 0 0 280px;
-	border-radius: 20px;
-	background: #fff;
-	color: #000;
+
 	padding: 20px;
+
+	color: #000;
+	border-radius: 20px;
+	background: #FFF;
 }
 
 .title {
-	font-weight: 700;
-	font-size: 36px;
-	line-height: 43px;
-	color: #FFFFFF;
-	text-align: center;
 	margin-bottom: 45px;
+
+	text-align: center;
+
+	color: #FFF;
+
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 43px;
 }
 
 .head {
 	display: grid;
 	grid-template-columns: 40px 1fr;
 	gap: 10px;
-	grid-template-areas: 
+	grid-template-areas:
 		"avatar name"
-		"avatar title"
-	;
+		"avatar title";
+
 	margin-bottom: 15px;
 }
 
 .avatar {
-	grid-area: avatar;
-	background: gray;
-	border-radius: 50%;
 	width: 40px;
 	height: 40px;
+
+	border-radius: 50%;
+	background: gray;
+	grid-area: avatar;
 }
 
 .name {
-	grid-area: name;
-	font-weight: 700;
 	font-size: 14px;
+	font-weight: 700;
 	line-height: 17px;
+	grid-area: name;
 }
 
 .subtitle {
-	grid-area: title;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 15px;
 	color: #4F4F4F;
+
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 15px;
+	grid-area: title;
 }
 
 .desc {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 22px;
 	margin-bottom: 25px;
+
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
 }
 
 .rating {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+
+	color: #4F4F4F;
+
+	font-size: 14px;
 
 	font-weight: 500;
-	font-size: 14px;
 	line-height: 22px;
-	color: #4F4F4F;
+	gap: 10px;
 }
 
 @media screen and (max-width: 767px) {
 	.content {
 		animation: animation-reviews 15s linear infinite;
 	}
+
 	.title {
 		font-size: 30px;
 		line-height: 37px;
@@ -105,35 +119,39 @@
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
+
 	.title {
+		margin-bottom: 20px;
+
 		font-size: 24px;
 		line-height: 29px;
-		margin-bottom: 20px;
 	}
+
 	.review {
 		flex: 0 0 240px;
 	}
+
 	.desc {
 		font-size: 12px;
 	}
 }
 
-
-
 @keyframes animation-bg {
 	0% {
 		background-position: 0% 0%;
 	}
+
 	100% {
 		background-position: 100% -50%;
 	}
 }
 
 @keyframes animation-reviews {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(-50%, 0, 0);
+	}
 }

@@ -7,6 +7,8 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 		<>
 			<Head>
 				<title>Future academy</title>
+				<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+				<meta property="og:locale" content="ru_RU" />
 			</Head>
 			<Component {...pageProps} />
 		</>

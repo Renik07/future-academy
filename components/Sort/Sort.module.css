@@ -1,11 +1,13 @@
 .sort {
 	display: flex;
 	gap: 40px;
+
 	align-items: center;
 }
 
 .sortIcon {
 	display: none;
+
 	margin-right: 8px;
 }
 
@@ -15,8 +17,10 @@
 
 .text {
 	cursor: pointer;
-	font-weight: 400;
+
+	color: #000;
+
 	font-size: 16px;
+	font-weight: 400;
 	line-height: 22px;
-	color: #000000;
 }

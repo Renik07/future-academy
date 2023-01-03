@@ -1,12 +1,12 @@
 .review {
 	display: grid;
 	grid-template-columns: 30px 1fr auto auto;
+
 	align-items: center;
 	gap: 10px;
-	grid-template-areas: 
+	grid-template-areas:
 		"icon title date rating"
-		"desc desc desc desc"
-	;
+		"desc desc desc desc";
 }
 
 .icon {
@@ -18,13 +18,15 @@
 }
 
 .date {
-	grid-area: date;
 	margin-right: 10px;
 
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 19px;
 	color: #3B434E;
+
+	font-size: 14px;
+
+	font-weight: 400;
+	line-height: 19px;
+	grid-area: date;
 }
 
 .rating {
@@ -32,49 +34,49 @@
 }
 
 .desc {
-	grid-area: desc;
+	color: #3B434E;
+
+	font-size: 14px;
 
 	font-weight: 400;
-	font-size: 14px;
 	line-height: 24px;
-	color: #3B434E;
+	grid-area: desc;
 }
 
-/*  */
-
 .title span {
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 24px;
 	color: #3B434E;
+
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 24px;
 }
 
 .title h3 {
 	display: inline-block;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 19px;
+
 	color: #3B434E;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 19px;
 }
 
 @media screen and (max-width: 998px) {
 	.review {
-		grid-template-areas: 
+		grid-template-areas:
 			"icon title title title"
 			"date date . rating"
-			"desc desc desc desc"
-		;
+			"desc desc desc desc";
 	}
 }
 
 @media screen and (max-width: 430px) {
 	.review {
 		grid-template-columns: 30px 1fr;
-		grid-template-areas: 
+		grid-template-areas:
 			"icon title"
 			"date date"
 			"rating rating"
-			"desc desc"
-		;
+			"desc desc";
 	}
 }

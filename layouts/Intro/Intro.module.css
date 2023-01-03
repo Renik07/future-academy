@@ -4,16 +4,20 @@
 
 .content {
 	flex: 0 1 55%;
-	color: var(--white);
+
 	padding: 125px 85px 175px 20px;
+
+	animation: animate-bg 25s linear infinite;
+
+	color: var(--white);
 	background: radial-gradient(#27AAE1 2%, transparent 5%), var(--primary);
 	background-position: 0% 0%;
 	background-size: 30px 29px;
-	animation: animate-bg 25s linear infinite;
 }
 
 .container {
 	position: relative;
+
 	max-width: 575px;
 	margin-left: auto;
 }
@@ -21,20 +25,23 @@
 .title {
 	position: relative;
 	z-index: 10;
-	font-weight: 700;
-	font-size: 36px;
-	line-height: 80px;
+
 	margin-bottom: 40px;
+
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 80px;
 }
 
 .text {
-	font-weight: 500;
 	font-size: 20px;
+	font-weight: 500;
 	line-height: 24px;
 }
 
 .promo {
 	flex: 0 1 45%;
+
 	background: url("./images/intro.jpg") no-repeat;
 	background-size: cover;
 }
@@ -74,6 +81,7 @@
 		font-size: 26px;
 		line-height: 45px;
 	}
+
 	.text {
 		font-size: 17px;
 		line-height: 21px;
@@ -84,27 +92,33 @@
 	.intro {
 		flex-direction: column-reverse;
 	}
+
 	.promo {
 		min-height: 375px;
 	}
+
 	.container {
 		max-width: 100%;
 	}
+
 	.crossIcon {
-    top: -182px;
-    left: -48px;
+		top: -182px;
+		left: -48px;
 	}
+
 	.circleIcon {
-    top: -316px;
-    right: -9px;
+		top: -316px;
+		right: -9px;
 	}
+
 	.trianleIcon {
 		bottom: -140px;
-    left: 66px;
+		left: 66px;
 	}
+
 	.vectorIcon {
-    top: 38px;
-    right: 105px;
+		top: 38px;
+		right: 105px;
 	}
 }
 
@@ -117,45 +131,58 @@
 @media screen and (max-width: 479px) {
 	.content {
 		padding: 30px 20px 40px;
+
 		background-size: 20px 21px;
 	}
+
 	.title {
+		margin-bottom: 20px;
+
 		font-size: 18px;
 		line-height: 22px;
-		margin-bottom: 20px;
 	}
+
 	.promo {
 		min-height: 250px;
 	}
+
 	.text {
 		font-size: 14px;
 		line-height: 17px;
 	}
+
 	.crossIcon {
-    top: -249px;
-    left: -69px;
+		top: -249px;
+		left: -69px;
 	}
+
 	.circleIcon {
-    top: -183px;
-    right: -49px;
+		top: -183px;
+		right: -49px;
 	}
+
 	.trianleIcon {
-    bottom: -77px;
-    left: 200px;
+		bottom: -77px;
+		left: 200px;
 	}
+
 	.vectorIcon {
-    top: 72px;
-    right: 71px;
+		top: 72px;
+		right: 71px;
 	}
+
 	.crossIcon svg {
 		transform: scale(0.6);
 	}
+
 	.circleIcon svg {
 		transform: scale(0.7);
 	}
+
 	.trianleIcon svg {
 		transform: scale(0.5);
 	}
+
 	.vectorIcon svg {
 		transform: scale(0.7);
 	}
@@ -165,6 +192,7 @@
 	0% {
 		background-position: 0% 0%;
 	}
+
 	100% {
 		background-position: 100% 50%;
 	}

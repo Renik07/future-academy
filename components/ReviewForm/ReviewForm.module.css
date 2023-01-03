@@ -2,11 +2,10 @@
 	display: grid;
 	grid-template-columns: auto auto 1fr;
 	gap: 20px 30px;
-	grid-template-areas: 
+	grid-template-areas:
 		"name title rating"
 		"text text text"
-		"submit submit submit"
-	;
+		"submit submit submit";
 }
 
 .name {
@@ -18,21 +17,24 @@
 }
 
 .rating {
-	grid-area: rating;
-	justify-self: flex-end;
 	display: flex;
 	align-items: center;
-	gap: 20px;
+
+	color: #3B434E;
+
+	font-size: 14px;
 
 	font-weight: 400;
-	font-size: 14px;
 	line-height: 19px;
-	color: #3B434E;
+	grid-area: rating;
+	justify-self: flex-end;
+	gap: 20px;
 }
 
 .text {
 	grid-area: text;
 }
+
 .text textarea {
 	width: 100%;
 	max-width: 100%;
@@ -43,10 +45,11 @@
 }
 
 .submit span {
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 24px;
 	color: #3B434E;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
 }
 
 .button {
@@ -55,9 +58,11 @@
 
 .panel {
 	position: relative;
-	border-radius: 5px;
-	padding: 15px;
+
 	margin-top: 15px;
+	padding: 15px;
+
+	border-radius: 5px;
 }
 
 .success {
@@ -67,13 +72,15 @@
 .error {
 	background: var(--red-light);
 }
+
 .error .close path {
 	stroke: var(--red);
 }
 
 .success h4 {
-	font-weight: bold;
 	margin-bottom: 5px;
+
+	font-weight: bold;
 }
 
 .success p {
@@ -81,34 +88,35 @@
 }
 
 .close {
-	cursor: pointer;
 	position: absolute;
 	top: 15px;
 	right: 15px;
+
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1130px) {
 	.reviewForm {
-		grid-template-areas: 
+		grid-template-areas:
 			"name title title"
 			"rating rating rating"
 			"text text text"
-			"submit submit submit"
-		;
+			"submit submit submit";
 	}
+
 	.rating {
 		justify-self: flex-start;
 	}
 }
+
 @media screen and (max-width: 870px) {
 	.reviewForm {
 		grid-template-columns: 1fr;
-		grid-template-areas: 
+		grid-template-areas:
 			"name"
 			"title"
 			"rating"
 			"text"
-			"submit"
-		;
+			"submit";
 	}
 }

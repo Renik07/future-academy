@@ -8,11 +8,19 @@ import { TopLevelCategory, TopPageModel } from "../../intefaces/page.interface";
 import { ProductModel } from "../../intefaces/product.interface";
 import { withLayout } from "../../layouts/Layout/Layout";
 import { TopPageComponent } from "../../page-components";
+import Head from "next/head";
 
-export const TopPage = ({ menu, page, products, firstCategory }:TopPageProps ): JSX.Element => {
+export const TopPage = ({ page, products, firstCategory }:TopPageProps ): JSX.Element => {
 	
 	return(
 		<>
+		<Head>
+			<title>{page.metaTitle}</title>
+			<meta name="description" content={page.metaDescription}></meta>
+			<meta property="og:title" content={page.metaTitle}></meta>
+			<meta property="og:description" content={page.metaDescription}></meta>
+			<meta property="og:type" content="article" />
+		</Head>
 			<TopPageComponent page={page} products={products} firstCategory={firstCategory} />
 		</>
 	);

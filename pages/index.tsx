@@ -10,18 +10,25 @@ import { Grid } from "../layouts/Grid/Grid";
 import { Reviews } from "../layouts/Reviews/Reviews";
 import { Welcome } from "../layouts/Welcome/Welcome";
 import { Form } from "../layouts/Form/Form";
+import Head from "next/head";
 
-function Home({ menu, firstCategory }:HomeProps): JSX.Element {
-	/* const [rating, setRating] = useState<number>(5); */
+function Home(): JSX.Element {
   return (
 		<>
-		<Intro />
-		<Choose />
-		<Promo />
-		<Grid />
-		<Reviews />
-		<Welcome />
-		<Form />
+			<Head>
+				<title>Future Academy</title>
+				<meta name="description" content="Future Academy - лучшие курсы во всем интернете"></meta>
+				<meta property="og:title" content="Future Academy"></meta>
+				<meta property="og:description" content="Future Academy - лучшие курсы во всем интернете"></meta>
+				<meta property="og:type" content="article" />
+			</Head>
+			<Intro />
+			<Choose />
+			<Promo />
+			<Grid />
+			<Reviews />
+			<Welcome />
+			<Form />
 		</>
   );
 }

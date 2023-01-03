@@ -1,6 +1,9 @@
 .product {
 	display: grid;
-	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] auto [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] 1fr [end];
+	grid-template-columns:
+		[start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] auto [pricestart] auto [priceend] 40px
+		[creditstart] auto [creditend] 40px [ratingstart] 1fr [end];
+
 	margin-top: 20px;
 	padding: 30px 30px 15px;
 }
@@ -12,21 +15,29 @@
 
 .title {
 	grid-column: titlestart / middle;
+
+	align-self: center;
+
+	color: #3B434E;
+
+	font-size: 20px;
+
+	font-weight: 600;
+	line-height: 27px;
 }
 
-.price, .priceTitle {
+.price,
+.priceTitle {
 	grid-column: pricestart / priceend;
 }
 
-.price {
-	
-}
-
-.credit, .creditTitle {
+.credit,
+.creditTitle {
 	grid-column: creditstart / creditend;
 }
 
-.rating, .ratingTitle {
+.rating,
+.ratingTitle {
 	grid-column: ratingstart / end;
 	justify-self: flex-end;
 }
@@ -41,48 +52,52 @@
 
 .desc {
 	grid-column: start / end;
+
+	margin-bottom: 15px;
+
+	color: #3B434E;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
 }
 
 .features {
 	grid-column: start / middle;
+
+	padding-right: 60px;
 }
+
 .advBlock {
 	grid-column: middle / end;
 }
 
 .actions {
 	grid-column: start / end;
+
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px 20px;
 }
 
-/*  */
-
 .logo img {
 	border-radius: 5px;
 }
 
-.title {
-	align-self: center;
-
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 27px;
-	color: #3B434E;
-}
-
-.price, .credit {
+.price,
+.credit {
 	align-self: flex-end;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 27px;
+
 	color: #3B434E;
+
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 27px;
 }
 
 .month {
-	font-weight: 400;
 	font-size: 14px;
+	font-weight: 400;
 	line-height: 19px;
 }
 
@@ -90,67 +105,44 @@
 	align-self: flex-end;
 }
 
-.advBlock {
-
-}
-
 .advantages {
 	padding-left: 15px;
+
 	border-left: 3px solid #1DC47E;
 	border-radius: 2px;
 }
 
-.advantages h4, 
+.advantages h4,
 .disadvantages h4 {
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 22px;
-	color: #3B434E;
 	margin-bottom: 5px;
+
+	color: #3B434E;
+
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 22px;
 }
 
-.advantages p, 
+.advantages p,
 .disadvantages p {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 22px;
 	color: #3B434E;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
 }
 
 .disadvantages {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	padding-left: 15px;
+
 	border-left: 3px solid #FC836D;
 	border-radius: 2px;
 }
 
-.priceTitle {
-
-}
-
-.creditTitle {
-
-}
-
 .ratingTitle {
 	text-decoration: underline;
-}
-
-.desc {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #3B434E;
-	margin-bottom: 15px;
-}
-
-.moreButton {
-	
-}
-
-.features {
-	padding-right: 60px;
 }
 
 .characteristics {
@@ -160,28 +152,33 @@
 }
 
 .characteristicName {
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 32px;
 	color: #3B434E;
+
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 32px;
 }
 
 .dots {
-	border-bottom: 1px dashed #C4C4C4;
 	margin-bottom: 10px;
+
+	border-bottom: 1px dashed #C4C4C4;
 }
 
 .characteristicValue {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 22px;
-	color: #3B434E;
 	text-align: right;
+
+	color: #3B434E;
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
 }
 
 .reviews {
-	padding: 25px 30px 30px;
 	overflow: hidden;
+
+	padding: 25px 30px 30px;
 }
 
 .closed {
@@ -192,66 +189,80 @@
 	.product {
 		grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
 		grid-template-areas:
-		"logo . title title title title title"
-		"logo . tags tags tags tags tags"
-		"price price price . credit . rating"
-		"priceTitle priceTitle priceTitle . creditTitle . ratingTitle"
-		"hr hr hr hr hr hr hr"
-		"desc desc desc desc desc desc desc"
-		"features features features features features features features"
-		"advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
-		"hr2 hr2 hr2 hr2 hr2 hr2 hr2"
-		"actions actions actions actions actions actions actions"
-		;
+			"logo . title title title title title"
+			"logo . tags tags tags tags tags"
+			"price price price . credit . rating"
+			"priceTitle priceTitle priceTitle . creditTitle . ratingTitle"
+			"hr hr hr hr hr hr hr"
+			"desc desc desc desc desc desc desc"
+			"features features features features features features features"
+			"advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
+			"hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+			"actions actions actions actions actions actions actions";
 	}
+
 	.logo {
 		grid-area: logo;
+
 		margin-bottom: 20px;
 	}
+
 	.title {
 		grid-area: title;
 	}
-	
+
 	.tags {
 		grid-area: tags;
 	}
+
 	.price {
 		grid-area: price;
 	}
+
 	.credit {
 		grid-area: credit;
 	}
+
 	.rating {
 		grid-area: rating;
 		justify-self: flex-start;
 	}
+
 	.priceTitle {
 		grid-area: priceTitle;
 	}
+
 	.creditTitle {
 		grid-area: creditTitle;
 	}
+
 	.ratingTitle {
 		grid-area: ratingTitle;
 		justify-self: flex-start;
 	}
+
 	.hr {
 		grid-area: hr;
 	}
+
 	.desc {
 		grid-area: desc;
 	}
+
 	.features {
-		grid-area: features;
-		padding-right: 0;
 		margin-bottom: 20px;
+		padding-right: 0;
+		grid-area: features;
 	}
+
 	.advBlock {
 		grid-area: advBlock;
 	}
+
 	.hr2 {
 		grid-area: hr2;
 	}
+
 	.actions {
 		grid-area: actions;
 	}
@@ -261,22 +272,24 @@
 	.product {
 		grid-template-columns: 70px 30px 1fr;
 		grid-template-areas:
-		"logo . title"
-		"logo . tags"
-		"priceTitle priceTitle price"
-		"creditTitle creditTitle credit"
-		"rating rating rating"
-		"ratingTitle ratingTitle ratingTitle"
-		"hr hr hr"
-		"desc desc desc"
-		"features features features"
-		"advBlock advBlock advBlock"
-		"hr2 hr2 hr2"
-		"actions actions actions"
-		;
+			"logo . title"
+			"logo . tags"
+			"priceTitle priceTitle price"
+			"creditTitle creditTitle credit"
+			"rating rating rating"
+			"ratingTitle ratingTitle ratingTitle"
+			"hr hr hr"
+			"desc desc desc"
+			"features features features"
+			"advBlock advBlock advBlock"
+			"hr2 hr2 hr2"
+			"actions actions actions";
 	}
-	.price, .credit {
+
+	.price,
+	.credit {
 		align-self: center;
+
 		margin-bottom: 5px;
 	}
 }
@@ -284,6 +297,7 @@
 @media screen and (max-width: 480px) {
 	.product {
 		grid-template-columns: 1fr;
+
 		padding: 30px 15px;
 		grid-template-areas:
 			"logo"
@@ -300,12 +314,13 @@
 			"features"
 			"advBlock"
 			"hr2"
-			"actions"
-		;
+			"actions";
 	}
+
 	.title {
 		margin-bottom: 10px;
 	}
+
 	.reviews {
 		padding: 25px 15px;
 	}

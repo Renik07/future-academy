@@ -1,19 +1,14 @@
-.header {
-
-}
-
 .container {
+	display: grid;
+	align-items: center;
+
 	max-width: 1185px;
 	margin: 0 auto;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	display: grid;
 	grid-template-columns: 100px auto auto 75px;
-	align-items: center;
 	gap: 40px;
-	grid-template-areas: 
-		"logo menu tel enter"
-	;
+	grid-template-areas: "logo menu tel enter";
 }
 
 .logo {
@@ -35,10 +30,11 @@
 }
 
 .item {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 17px;
 	white-space: nowrap;
+
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
 }
 
 .item a {
@@ -50,6 +46,7 @@
 .enter {
 	grid-area: enter;
 	justify-self: self-end;
+
 	display: flex;
 	align-items: center;
 	gap: 5px;
@@ -58,27 +55,30 @@
 .tel {
 	grid-area: tel;
 	justify-self: self-end;
+
 	white-space: nowrap;
 }
 
-/*  */
-
 .buttonOpen {
 	display: none;
-	padding: 0 15px;	
+
+	padding: 0 15px;
 }
 
 .menuMobile {
-	display: none;
 	position: fixed;
 	z-index: 10;
-	overflow-y: scroll;
-	top: 0px;
-	left: 0;
+	top: 0;
 	right: 0;
 	bottom: 0;
-	background: #F5F6F8;
+	left: 0;
+
+	display: none;
+	overflow-y: scroll;
+
 	padding: 10px;
+
+	background: #F5F6F8;
 }
 
 .buttonClose {
@@ -86,11 +86,6 @@
 	z-index: 10;
 	top: 12px;
 	left: 13px;
-
-}
-
-.sidebar {
-
 }
 
 @media screen and (max-width: 980px) {
@@ -98,6 +93,7 @@
 		flex-wrap: wrap;
 		justify-content: flex-start;
 	}
+
 	.item {
 		flex: 0 1 32%;
 	}
@@ -107,9 +103,11 @@
 	.container {
 		padding: 20px 15px;
 	}
+
 	.buttonOpen {
 		display: block;
 	}
+
 	.menuMobile {
 		display: initial;
 	}
@@ -118,11 +116,11 @@
 @media screen and (max-width: 670px) {
 	.container {
 		gap: 10px 30px;
-		grid-template-areas: 
-		"logo menu menu menu"
-		"logo tel tel enter"
-		;
+		grid-template-areas:
+			"logo menu menu menu"
+			"logo tel tel enter";
 	}
+
 	.list {
 		justify-content: flex-end;
 	}
@@ -131,14 +129,15 @@
 @media screen and (max-width: 400px) {
 	.container {
 		grid-template-columns: 100px auto;
-		grid-template-areas: 
-		"logo menu"
-		"tel enter"
-		;
+		grid-template-areas:
+			"logo menu"
+			"tel enter";
 	}
+
 	.list {
 		gap: 5px;
 	}
+
 	.tel {
 		justify-self: auto;
 	}

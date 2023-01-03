@@ -4,11 +4,13 @@
 
 .button {
 	position: absolute;
-	padding: 8px;
-	width: 39px;
-	height: 39px;
 	top: 3px;
 	right: 3px;
+
+	width: 39px;
+	height: 39px;
+	padding: 8px;
+
 	border-radius: 6px;
 }
 
