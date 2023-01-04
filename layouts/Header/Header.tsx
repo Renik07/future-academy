@@ -54,7 +54,9 @@ export const Header = ({ ...props }: HeaderProps):JSX.Element => {
 		>
 			<div className={styles.container}>
 			<Link href="/">
-				<Logo className={styles.logo} />
+				<a>
+					<Logo className={styles.logo} />
+				</a>
 			</Link>
 			<nav className={styles.menu}>
 				<ul className={styles.list}>
