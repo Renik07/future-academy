@@ -8,5 +8,5 @@ export const Sidebar = ({ ...props }: SidebarProps):JSX.Element => {
 			<Search />
 			<Menu />
 		</div>
-	)
+	);
 };

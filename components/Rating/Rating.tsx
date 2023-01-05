@@ -10,6 +10,7 @@ export const Rating = forwardRef(({isEditable = false, rating, setRating, error,
 
 	useEffect(() => {
 		constructRating(rating);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [rating]);
 
 	const constructRating = (currentRating: number) => {

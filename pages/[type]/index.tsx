@@ -7,7 +7,7 @@ import { MenuItem } from "../../intefaces/menu.interface";
 import { Categories } from "../../layouts/Categories/Categories";
 import { withLayout } from "../../layouts/Layout/Layout";
 
-const Type = ({ firstCategory, menu }: TypeProps):JSX.Element => {
+const Type = ({ menu }: TypeProps):JSX.Element => {
 	
 	return (
 		<>
@@ -15,6 +15,8 @@ const Type = ({ firstCategory, menu }: TypeProps):JSX.Element => {
 		</>
 	);
 };
+
+export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
@@ -52,5 +54,3 @@ interface TypeProps extends Record<string, unknown> {
 	menu: MenuItem[],
 	firstCategory: number
 }
-
-export default withLayout(Type);

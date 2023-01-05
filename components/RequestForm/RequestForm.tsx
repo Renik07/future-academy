@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { IRequestForm } from "./RequestForm.interface";
 import { useState } from "react";
 
-export const RequestForm = ({ className, ...props}: RequestFormProps): JSX.Element => {
+export const RequestForm = ({ ...props}: RequestFormProps): JSX.Element => {
 	const { register, handleSubmit, formState: {errors}, reset } = useForm<IRequestForm>();
 	const [isSuccessSentForm, setIsSuccessSentForm] = useState<boolean>(false);
 	const [errorMessage, setErrorMessage] = useState<string>();
@@ -21,7 +21,7 @@ export const RequestForm = ({ className, ...props}: RequestFormProps): JSX.Eleme
 			}
 		} catch (error) {
 			if (error instanceof Error) {
-				console.log(error.message);
+				console.log(errorMessage);
 			}
 		}
 	};

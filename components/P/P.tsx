@@ -14,5 +14,5 @@ export const P = ({ size = "m", children, className, ...props }: PProps):JSX.Ele
 		>
 			{ children }
 		</p>
-	)
+	);
 };

@@ -9,9 +9,16 @@ import { ProductModel } from "../../intefaces/product.interface";
 import { withLayout } from "../../layouts/Layout/Layout";
 import { TopPageComponent } from "../../page-components";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export const TopPage = ({ page, products, firstCategory }:TopPageProps ): JSX.Element => {
-	
+	const router = useRouter();
+
+	if (router.isFallback) {
+		return (
+			<div>Loading...</div>
+		);
+	}
 	return(
 		<>
 		<Head>

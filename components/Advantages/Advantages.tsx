@@ -1,6 +1,5 @@
 import { AdvantagesProps } from "./Advantages.props";
 import styles from './Advantages.module.css';
-import cn from 'classnames';
 import { Htag } from "../Htag/Htag";
 import CheckIcon from './check-icon.svg';
 

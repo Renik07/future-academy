@@ -1,6 +1,5 @@
 import { HhDataProps } from "./HhData.props";
 import styles from './HhData.module.css';
-import cn from 'classnames';
 import StarIcon from "./star-icon.svg";
 import { Card } from "../Card/Card";
 import { salaryRu } from "../../helpers/helpers";

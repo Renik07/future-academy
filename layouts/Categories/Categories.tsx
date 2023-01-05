@@ -10,7 +10,7 @@ export const Categories = ({ menu, ...props }: CategoriesProps):JSX.Element => {
 		>
 			<h2 className={styles.title}>Курсы</h2>
 			<div className={styles.content}>
-				{ menu.map(m => 
+				{ menu && menu.map(m => 
 					<div 
 						className={styles.card} 
 						color="blue" 

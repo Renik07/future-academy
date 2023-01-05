@@ -5,10 +5,10 @@ import { Rating } from "../Rating/Rating";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 
-export const Review = ({ review, className, ...props }: ReviewProps):JSX.Element => {
-	const { _id, name, title, description, rating, createdAt } = review;
+export const Review = ({ review, ...props }: ReviewProps):JSX.Element => {
+	const { name, title, description, rating, createdAt } = review;
 	return (
-		<div className={styles.review}>
+		<div className={styles.review} {...props}>
 			<UserIcon className={styles.icon} />
 			<div className={styles.title}>
 				<span>{ name }: </span>

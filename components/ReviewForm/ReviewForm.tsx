@@ -12,7 +12,7 @@ import cn from 'classnames';
 import { API } from "../../helpers/api";
 import { useState } from "react";
 
-export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):JSX.Element => {
+export const ReviewForm = ({ productId, ...props }: ReviewFormProps):JSX.Element => {
 	const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
 	const [isSuccessSentForm, setIsSuccessSentForm] = useState<boolean>(false);
 	const [errorMessage, setErrorMessage] = useState<string>();
